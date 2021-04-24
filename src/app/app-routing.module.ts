@@ -6,9 +6,13 @@ import { PostComponent } from './post/post.component';
 
 
 const routes: Routes = [
-   {path: "", redirectTo: "/login", pathMatch: "full" }, 
-    { path: "login", component: LoginComponent 
- }, { path: "signup", component: SignupComponent },
+  // localhost:4200/
+    {path: "", redirectTo: "/login", pathMatch: "full" },
+   //local host:4200/login
+    { path: "login", component: LoginComponent },
+    //local host:4200/signup
+    { path: "signup", component: SignupComponent },
+    //local host:4200/post
     { path: "post", component: PostComponent  }
 ];
 

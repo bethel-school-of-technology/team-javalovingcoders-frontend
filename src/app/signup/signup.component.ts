@@ -6,7 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-
+  onAddUser(){
+    alert('Post Added!')
+  }
   constructor() { }
 
   ngOnInit(): void {
