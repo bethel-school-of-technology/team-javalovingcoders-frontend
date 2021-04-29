@@ -2,14 +2,27 @@
   <img width="500" alt="FamilyFavsnCraves Logo" src="../assets/images/Logo1.png">
   </div>
 
-<div class="users">
-  <input type="text" placeholder="Full Name"><br><br>
-  <input type="text" placeholder="Email"><br><br>
-  <input type="text" placeholder="Username"><br><br>
-  <input type="text" placeholder="Password"><br><br>
-
-  <button (click)="onAddUser()">User Login</button>
+  <form (ngSubmit)="onSubmit()">
+    <div>
+      <span>Full Name</span>
+      <input type="text" placeholder="Full Name" id="fullname" name="fullname" required [( ngModel )] ="model.fullName" />
+    </div>
+    <div>
+      <span>Email</span>
+      <input type="text" placeholder="Email" id="email" name="email" required [( ngModel )] ="model.email" />
+    </div>
+    <div>
+      <span>Username</span>
+      <input type="text" placeholder="Username" id="username" name="username" required [( ngModel )] ="model.username" />
+    </div>
+    <div>
+      <span>Password</span>
+      <input type="password" placeholder="Password" id="password" name="password" required [( ngModel )] ="model.password" />
+    </div>
+<div>
+  <button (click)= "onSubmit()">User Login</button>
 </div>
+</form>
 
 
 
