@@ -1,10 +1,14 @@
+mat-form-field {
+  width: 100%;
+}
+
+mat-spinner {
+  margin: auto;
+}
+
 .logo {
   text-align: center;
 }
-.logo img {
-  max-width: 300px;
-}
-#users {
-  text-align: center;
-}
+
+
 

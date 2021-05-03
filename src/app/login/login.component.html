@@ -1,17 +1,17 @@
-<div class="logo">
+<div id="logo">
 <img width="500" alt="FamilyFavsnCraves Logo" src="../assets/images/Logo1.png">
 </div>
-<form (ngSubmit) = "login">
-<div>
-  <span>Username</span>
-<input type="text" placeholder="Username" name="username" [( ngModel)] ="loginform.username"><br>
-</div>
-<div class="py-1">
-  <span>Password</span>
-<input type="password" placeholder="Password" name="password" [( ngModel)] ="loginform.password"><br>
-</div>
-<div>
-<button>User Login</button>
-<p>Not a User?  Sign up HERE!</p>
-</div>
-</form>
+  <mat-card>
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
+    <form (submit)="onLogin(loginForm)" #loginForm="ngForm" *ngIf="!isLoading">
+  <mat-form-field>
+   <input matInput name="email" ngModel type="email" placeholder="E-Mail" #emailInput="ngModel" required email>
+   <mat-error *ngIf="emailInput.invalid">Please enter a valid email.</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input type="password" name="password" ngModel matInput placeholder="Password" #passwordInput="ngModel" required>
+    <mat-error *ngIf="passwordInput.invalid">Please enter a valid password</mat-error>
+   </mat-form-field>
+   <button mat-raised-button color="accent" type="submit">Login</button>
+  </form>
+</mat-card>

@@ -4,11 +4,4 @@ export class User {
   email: string | undefined;
   username:string | undefined;
   password: string | undefined
-
-  //constructor (){
-  //  this.fullname="";
-  //  this.email="";
-  //  this.username="";
-  //  this.password="";
-  //}
 }

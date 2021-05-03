@@ -1,25 +1,17 @@
-import { Component, OnInit } from '@angular/core';
-
-import { UserService } from '../services/user.service';
+import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
+    isLoading = false;
 
-    login = {
-    username:"",
-    password:""
-  }
+    onLogin(form: NgForm){
+      console.log(form.value);
+    }
 
-  constructor(private userService: UserService) { }
-
-  ngOnInit(): void {
-  }
-  signin(){
-    console.log(this.login);
-  }
 
 }

@@ -1,9 +1,13 @@
-.logo {
-  text-align: center;
+mat-card{
+  width: 25%;
+  margin: auto;
 }
-.logo img {
-  max-width: 500px;
+
+mat-form-field
+textarea{
+  width: 100%;
 }
-.users {
+
+#logo{
   text-align: center;
 }
