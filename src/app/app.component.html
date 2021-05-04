@@ -1,19 +1,12 @@
-<mat-toolbar color="primary">
-<span>
-  <a routerLink="/"></a>
-</span>
-<span class="spacer"></span>
-<ul>
-  <li>
-    <a mat-button routerLink="/login" routerLinkActive="mat-accent">Login</a> |
-  </li>
-  <li>
-    <a mat-button routerLink="/signup" routerLinkActive="mat-accent">Signup</a> |
-  </li>
-  <li>
-    <a mat-button routerLink="/logout" routerLinkActive="mat-accent">Logout</a>
-  </li>
-  </ul>
-  </mat-toolbar>
+<app-header></app-header>
+<div class="jombotron">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-8 offset-sm-2">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>
 
 

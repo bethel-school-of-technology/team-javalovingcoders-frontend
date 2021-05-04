@@ -1,14 +1,13 @@
-mat-form-field {
-  width: 100%;
-}
-
-mat-spinner {
+mat-card{
+  width: 25%;
   margin: auto;
 }
 
-.logo {
-  text-align: center;
+mat-form-field
+textarea{
+  width: 100%;
 }
 
-
-
+#logo{
+  text-align: center;
+}
