@@ -1,28 +1,26 @@
-<div class="logo">
+<div id="logo">
   <img width="500" alt="FamilyFavsnCraves Logo" src="../assets/images/Logo1.png">
   </div>
-
-  <form (ngSubmit)="onSubmit()">
-    <div>
-      <span>Full Name</span>
-      <input type="text" placeholder="Full Name" id="fullname" name="fullname" required [( ngModel )] ="model.fullName" />
-    </div>
-    <div>
-      <span>Email</span>
-      <input type="text" placeholder="Email" id="email" name="email" required [( ngModel )] ="model.email" />
-    </div>
-    <div>
-      <span>Username</span>
-      <input type="text" placeholder="Username" id="username" name="username" required [( ngModel )] ="model.username" />
-    </div>
-    <div>
-      <span>Password</span>
-      <input type="password" placeholder="Password" id="password" name="password" required [( ngModel )] ="model.password" />
-    </div>
-<div>
-  <button (click)= "onSubmit()">User Login</button>
-</div>
-</form>
-
-
+    <mat-card>
+      <mat-spinner *ngIf="isLoading"></mat-spinner>
+      <form (submit)="onSignup(signupForm)" #signupForm="ngForm" *ngIf="!isLoading">
+    <mat-form-field>
+        <input matInput name="name" ngModel type="name" placeholder="Name" #usernameInput="ngModel" required name>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput name="username" ngModel type="username" placeholder="Username" #usernameInput="ngModel" required username>
+    </mat-form-field>
+    <mat-form-field>
+     <input matInput name="email" ngModel type="email" placeholder="E-Mail" #emailInput="ngModel" required email>
+     <mat-error *ngIf="emailInput.invalid">Please enter a valid email.</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input type="password" name="password" ngModel matInput placeholder="Password" #passwordInput="ngModel" required>
+      <mat-error *ngIf="passwordInput.invalid">Please enter a valid password</mat-error>
+     </mat-form-field>
+     <mat-card-actions>
+     <button mat-raised-button color="accent" type="submit">Signup</button>
+    </mat-card-actions>
+    </form>
+  </mat-card>
 
