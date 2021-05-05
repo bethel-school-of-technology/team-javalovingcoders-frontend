@@ -20,6 +20,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { PostComponent } from './post/post.component';
+import { ProfileComponent } from './profile/profile.component'
 import { HeaderComponent } from './header/header.component';
 
 
@@ -29,6 +30,7 @@ import { HeaderComponent } from './header/header.component';
     LoginComponent,
     SignupComponent,
     PostComponent,
+    ProfileComponent,
     HeaderComponent
   ],
   imports: [
