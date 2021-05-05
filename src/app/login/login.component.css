@@ -1,11 +1,13 @@
-.logo {
-  text-align: center;
-}
-.logo img {
-  max-width: 300px;
-}
-#users {
-  text-align: center;
-  padding:10px;
+mat-card{
+  width: 25%;
+  margin: auto;
 }
 
+mat-form-field
+textarea{
+  width: 100%;
+}
+
+#logo{
+  text-align: center;
+}

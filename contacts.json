@@ -1,0 +1,22 @@
+{
+  "contacts": [
+    {
+      "id": 1,
+      "fullName": "Bryan Beittel",
+      "email": "test@test.com",
+      "userName": "BB"
+    },
+    {
+      "id": 2,
+      "fullName": "Bryan Vital",
+      "email": "test@test.com",
+      "userName": "BV"
+    },
+    {
+      "id": 3,
+      "fullName": "John Smith",
+      "email": "Smith@test.com",
+      "userName": "ST"
+    }
+  ]
+}

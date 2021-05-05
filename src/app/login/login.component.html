@@ -1,11 +1,20 @@
-<div class="logo">
+<div id="logo">
 <img width="500" alt="FamilyFavsnCraves Logo" src="../assets/images/Logo1.png">
 </div>
+  <mat-card>
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
+    <form (submit)="onLogin(loginForm)" #loginForm="ngForm" *ngIf="!isLoading">
+  <mat-form-field>
+   <input matInput name="email" ngModel type="email" placeholder="E-Mail" #emailInput="ngModel" required email>
+   <mat-error *ngIf="emailInput.invalid">Please enter a valid email.</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input type="password" name="password" ngModel matInput placeholder="Password" #passwordInput="ngModel" required>
+    <mat-error *ngIf="passwordInput.invalid">Please enter a valid password</mat-error>
+   </mat-form-field>
+   <mat-card-actions>
+   <button mat-raised-button color="accent" type="submit">Login</button>
+  </mat-card-actions>
+  </form>
+</mat-card>
 
-<div id="users">
-<input type="text" placeholder="Username"><br>
-<input type="text" placeholder="Password"><br><br>
-
-<button>User Login</button>
-<p>Not a User?  Sign up HERE!</p>
-</div>

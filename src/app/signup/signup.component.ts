@@ -1,17 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css']
 })
-export class SignupComponent implements OnInit {
-  onAddUser(){
-    alert('Post Added!')
-  }
-  constructor() { }
+export class SignupComponent {
+    isLoading = false;
 
-  ngOnInit(): void {
-  }
-
+    onSignup(form: NgForm){
+      console.log(form.value);
+    }
 }
