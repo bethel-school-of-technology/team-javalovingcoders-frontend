@@ -5,7 +5,7 @@
       <mat-spinner *ngIf="isLoading"></mat-spinner>
       <form (submit)="onSignup(signupForm)" #signupForm="ngForm" *ngIf="!isLoading">
     <mat-form-field>
-        <input matInput name="name" ngModel type="name" placeholder="Name" #usernameInput="ngModel" required name>
+        <input matInput name="fullname" ngModel type="fullname" placeholder="Name" #usernameInput="ngModel" required name>
     </mat-form-field>
     <mat-form-field>
       <input matInput name="username" ngModel type="username" placeholder="Username" #usernameInput="ngModel" required username>
