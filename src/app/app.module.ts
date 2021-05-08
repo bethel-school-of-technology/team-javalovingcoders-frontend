@@ -22,6 +22,7 @@ import { SignupComponent } from './signup/signup.component';
 import { PostComponent } from './post/post.component';
 import { ProfileComponent } from './profile/profile.component'
 import { HeaderComponent } from './header/header.component';
+import { PostListComponent } from './post/post-list/post-list.component'
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { HeaderComponent } from './header/header.component';
     SignupComponent,
     PostComponent,
     ProfileComponent,
-    HeaderComponent
+    HeaderComponent,
+    PostListComponent
   ],
   imports: [
     BrowserModule,
