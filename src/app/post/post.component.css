@@ -1,0 +1,10 @@
+main {
+    margin-top: 1rem;
+    width:25%;
+    margin:1rem;
+}
+
+mat-form-field, 
+textarea {
+    margin: auto;
+}
