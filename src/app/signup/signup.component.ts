@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { from } from 'rxjs';
+
+
 
 @Component({
   selector: 'app-signup',
@@ -9,7 +12,9 @@ import { NgForm } from '@angular/forms';
 export class SignupComponent {
     isLoading = false;
 
+constructor() {}
+
     onSignup(form: NgForm){
-      console.log(form.value);
-    }
+    console.log(form.value)
+  }
 }

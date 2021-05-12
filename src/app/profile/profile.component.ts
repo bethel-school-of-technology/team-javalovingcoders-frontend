@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { User } from '../models/user';
+import { UserService } from '../services/user.service.spec';
 
 
 
@@ -9,16 +12,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
   storedPosts: any = [];
-  
 
-  onPostAdded(post: any) {
-    this.storedPosts.push(post);
-    console.log(post)
-  }
-  
-  constructor() { }
+  currentUser: User = new User();
+
+  constructor(private myUserService: UserService, private myRouter: Router) { }
 
   ngOnInit(): void {
-  }
 
+
+  }
 }

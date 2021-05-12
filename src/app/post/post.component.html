@@ -1,14 +1,14 @@
 <main>
 <mat-card>
     <mat-form-field>
-        <input matInput type="text" [(ngModel)]="enteredTitle">
+        <input matInput type="text" placeholder="Recipe Type & Origin"[(ngModel)]="enteredTitle">
         </mat-form-field>
         <br>
         <mat-form-field>
-            <textarea matInput rows="6" [(ngModel)]="enteredContent"></textarea>
+            <textarea matInput rows="6" placeholder="Enter Recipe here!"></textarea>
             </mat-form-field>
-<button 
-    mat-raised-button 
+<button
+    mat-raised-button
     color="accent"
     (click)="onAddPost()">Submit
 </button>
