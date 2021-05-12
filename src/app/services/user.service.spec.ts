@@ -12,4 +12,11 @@ import { NgModule } from "@angular/core";
 
   exports:[],
 })
-export class UserService { }
+export class UserService {
+  loginUser(username: string, password: string) {
+    throw new Error('Method not implemented.');
+  }
+  getUserProfile() {
+    throw new Error('Method not implemented.');
+  }
+}

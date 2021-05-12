@@ -3,12 +3,10 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Post } from '../models/post';
 
-//I think I might need this profile route so that I can add the posts to the profile. Stay tuned. 
+//I think I might need this profile route so that I can add the posts to the profile. Stay tuned.
 //import { Profile } from "../models/profile"
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable({providedIn: 'root'})
 export class PostService {
 
   myPostURL: string ="localhost:3000/post"
@@ -46,5 +44,5 @@ export class PostService {
 
 }
 
- 
+
 

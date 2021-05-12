@@ -6,7 +6,6 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import { MatCardActions } from '@angular/material/card';
 import { MatCardModule } from '@angular/material/card';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -23,6 +22,7 @@ import { PostComponent } from './post/post.component';
 import { ProfileComponent } from './profile/profile.component'
 import { HeaderComponent } from './header/header.component';
 import { PostListComponent } from './post/post-list/post-list.component'
+import { UserService } from './services/user.service.spec';
 
 
 @NgModule({
@@ -50,9 +50,10 @@ import { PostListComponent } from './post/post-list/post-list.component'
     MatProgressSpinnerModule,
     MatToolbarModule,
     MatPaginatorModule,
-    MatExpansionModule
+    MatExpansionModule,
+    UserService
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
