@@ -10,12 +10,12 @@ import { from } from 'rxjs';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent {
-    isLoading = false;
+  isLoading = false;
   myUserService: any;
 
-constructor() {}
+  constructor() { }
 
-    signup(){
+  signup() {
     console.log(this.newUser);
     this.myUserService.registerUser(this.newUser).subscribe((myResponseObject: any) => {
       console.log(myResponseObject);

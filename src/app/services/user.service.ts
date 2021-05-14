@@ -10,7 +10,7 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  serverUserURL: string = "http://localhost:5000/api/users";
+  serverUserURL: string = "http://localhost:3001/users";
 
   //we need a way for users to signup
   //type of request: POST
