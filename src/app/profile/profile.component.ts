@@ -1,8 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { User } from '../models/user';
-import { UserService } from '../services/user.service.spec';
-
 
 
 @Component({
@@ -13,12 +9,15 @@ import { UserService } from '../services/user.service.spec';
 export class ProfileComponent implements OnInit {
   storedPosts: any = [];
 
-  currentUser: User = new User();
+onPostAdded(post:any){
+  this.storedPosts.push(post);
+  console.log(post);
+}
 
-  constructor(private myUserService: UserService, private myRouter: Router) { }
+    constructor() { }
 
-  ngOnInit(): void {
+    ngOnInit(): void {
 
+    }
 
   }
-}

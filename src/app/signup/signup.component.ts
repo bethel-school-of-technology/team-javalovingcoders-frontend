@@ -11,10 +11,17 @@ import { from } from 'rxjs';
 })
 export class SignupComponent {
     isLoading = false;
+  myUserService: any;
 
 constructor() {}
 
-    onSignup(form: NgForm){
-    console.log(form.value)
+    signup(){
+    console.log(this.newUser);
+    this.myUserService.registerUser(this.newUser).subscribe((myResponseObject: any) => {
+      console.log(myResponseObject);
+    })
+  }
+  newUser(newUser: any) {
+    throw new Error('Method not implemented.');
   }
 }

@@ -14,11 +14,11 @@ export class PostComponent implements OnInit {
   onAddPost() {
     const post =
     {
-      title: this.enteredTitle, 
+      title: this.enteredTitle,
 
       content: this.enteredContent
     };
-    
+
     this.postCreated.emit(post);
   }
   constructor() { }
