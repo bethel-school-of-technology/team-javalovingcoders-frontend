@@ -13,8 +13,8 @@ onPostAdded(post:any){
   this.storedPosts.push(post);
   console.log(post);
 }
+  constructor(private myUserService: UserService, private myRouter: Router) { }
 
-    constructor() { }
 
     ngOnInit(): void {
 
