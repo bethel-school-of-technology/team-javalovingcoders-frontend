@@ -15,6 +15,10 @@ export class ProfileComponent implements OnInit {
 
   currentUser: User = new User();
 
+  onPostAdded(post: any) {
+    this.storedPosts.push(post);
+    console.log(post)
+  }
   constructor(private myUserService: UserService, private myRouter: Router) { }
 
   ngOnInit(): void {
