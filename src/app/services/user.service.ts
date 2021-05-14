@@ -10,7 +10,7 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  serverUserURL: string = "http://localhost:5000/api/users";
+  serverUserURL: string = "http://localhost:3001/users";
 
   //we need a way for users to signup
   //type of request: POST
@@ -30,7 +30,10 @@ export class UserService {
   //we need a way for users to create profile
   //type of request: GET
   getUserProfile(): Observable<any>{
-    return this.http.get(this.serverUserURL+"/profile")
+    let myHeaders = {
+      Authorization: localStorage.getItem("myAppToken")
+    }
+    return this.http.get(this.serverUserURL+"/profile", {});
   }
   //we need a way for users to logout
   //we need a way for users to search posts

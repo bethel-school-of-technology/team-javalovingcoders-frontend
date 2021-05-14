@@ -5,11 +5,11 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class ProfileService {
+export class PostService {
 
-  myProfileURL: string ="localhost:3000/profile"
+  myPostURL: string ="localhost:3000/profile"
 
   constructor(private http: HttpClient) { }
 
-  
+
 }
