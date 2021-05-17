@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { UserService } from '../services/user.service.spec';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-login',
@@ -16,20 +16,20 @@ export class LoginComponent {
   }
 
   constructor(private myUserService: UserService, private myRouter: Router) { }
-  login(){
-    console.log(this.newUser);
-  // login() {
-  //   console.log(this.loginform);
-  //   this.myUserService.loginUser(this.loginform.username, this.loginform.password).subscribe((myResponseObject:any) => {
-  //     console.log(myResponseObject);
-  //     if(myResponseObject.status === 200) {
-  //       window.alert(myResponseObject.message);
-  //       localStorage.setItem('myAppToken', myResponseObject.token);
-  //       this.myRouter.navigate(["/profile"]);
-  //     }else
-  //     window.alert(myResponseObject.message);
-  //   })
+
+  login() {
+    console.log(this.loginForm);
+    this.myUserService.loginUser(this.loginForm.username, this.loginForm.password).subscribe((myResponseObject: any) => {
+      console.log(myResponseObject);
+      if (myResponseObject.status === 200) {
+        window.alert(myResponseObject.message);
+        localStorage.setItem('myAppToken', myResponseObject.token);
+        this.myRouter.navigate(["/profile"]);
+      } else
+        window.alert(myResponseObject.message);
+    })
   }
   newUser(newUser: any) {
     throw new Error('Method not implemented.');
-  }}
+  }
+}

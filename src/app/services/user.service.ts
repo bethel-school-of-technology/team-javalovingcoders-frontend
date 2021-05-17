@@ -24,7 +24,7 @@ export class UserService {
       username,
       password
     }
-    return this.http.post(this.serverUserURL+"/login", loginInfo);
+    return this.http.post<any>(this.serverUserURL+"/login", loginInfo);
   }
   //we need a way for users to create posts
   //we need a way for users to create profile
