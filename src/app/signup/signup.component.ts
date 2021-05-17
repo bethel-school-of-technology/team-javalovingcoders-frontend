@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
-import { NgForm } from '@angular/forms';
-import { from } from 'rxjs';
-
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { User } from '../models/user';
+import { UserService } from '../services/user.service';
 
 
 @Component({
@@ -11,17 +11,18 @@ import { from } from 'rxjs';
 })
 export class SignupComponent {
   isLoading = false;
-  myUserService: any;
 
-  constructor() { }
+  newUser: User = new User();
+
+  constructor(private myUserService: UserService, private myRouter: Router) { }
 
   signup() {
     console.log(this.newUser);
     this.myUserService.registerUser(this.newUser).subscribe((myResponseObject: any) => {
       console.log(myResponseObject);
-    })
-  }
-  newUser(newUser: any) {
-    throw new Error('Method not implemented.');
+      if (myResponseObject.status === 200) {
+        this.myRouter.navigate(["/login"]);
+      } else { }
+     })
   }
 }

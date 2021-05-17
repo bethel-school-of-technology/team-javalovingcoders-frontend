@@ -7,6 +7,10 @@ import { User } from '../models/user';
   providedIn: 'root'
 })
 export class UserService {
+  myHttp: any;
+  static registerUser(newUser: (newUser: any) => void) {
+    throw new Error('Method not implemented.');
+  }
 
   constructor(private http: HttpClient) { }
 
@@ -15,7 +19,7 @@ export class UserService {
   //we need a way for users to signup
   //type of request: POST
   registerUser(newUser: User): Observable<any>{
-    return this.http.post(this.serverUserURL+"/register", newUser);
+    return this.http.post(this.serverUserURL+"/signup", newUser);
   }
   //we need a way for users to login
   //type of request: POST
@@ -24,7 +28,7 @@ export class UserService {
       username,
       password
     }
-    return this.http.post<any>(this.serverUserURL+"/login", loginInfo);
+    return this.http.post(this.serverUserURL+"/login", loginInfo);
   }
   //we need a way for users to create posts
   //we need a way for users to create profile
@@ -33,7 +37,7 @@ export class UserService {
     let myHeaders = {
       Authorization: localStorage.getItem("myAppToken")
     }
-    return this.http.get(this.serverUserURL+"/profile", {});
+    return this.myHttp.get(this.serverUserURL+"/profile", {headers: myHeaders});
   }
   //we need a way for users to logout
   //we need a way for users to search posts
