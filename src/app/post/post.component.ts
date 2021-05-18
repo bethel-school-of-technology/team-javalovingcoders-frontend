@@ -12,7 +12,7 @@ export class PostComponent implements OnInit {
   enteredTitle='';
   enteredContent='';
   @Output() postCreated = new EventEmitter();
-  
+
 
   // This has to match the backend (below)
 
@@ -32,10 +32,8 @@ export class PostComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  // createNew(){
-  //   this.myPostService.createPost(this.newPost).subscribe(response => {
-  //     console.log(response)
-  //   })
-  // }
+  refresh():void {
+    window.location.reload();
+  }
 
 }

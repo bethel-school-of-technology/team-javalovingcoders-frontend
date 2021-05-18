@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ɵɵqueryRefresh } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from '../services/user.service.spec';
 import { PostService } from '../services/post.service';
@@ -28,4 +28,7 @@ onPostAdded(post:any){
 
     }
 
+
   }
+
+
