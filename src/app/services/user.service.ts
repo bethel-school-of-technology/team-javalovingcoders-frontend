@@ -1,3 +1,4 @@
+/* tslint:disabled */
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -37,7 +38,9 @@ export class UserService {
     let myHeaders = {
       Authorization: localStorage.getItem("myAppToken")
     }
-    return this.myHttp.get(this.serverUserURL+"/profile", {headers: myHeaders});
+    return this.http.get(this.serverUserURL+"/profile", {headers: {
+      Authorization: localStorage.getItem("myAppToken")
+    }});
   }
   //we need a way for users to logout
   //we need a way for users to search posts

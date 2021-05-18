@@ -1,4 +1,4 @@
 export class Post {
-    profileId!: number;
+    profileId: number;
     profileBio: string | undefined;
   }

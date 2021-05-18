@@ -9,13 +9,13 @@ import { Post } from '../models/post';
 @Injectable({providedIn: 'root'})
 export class PostService {
 
-  myPostURL: string ="localhost:3000/post"
+  myPostURL: string ="http://localhost:3001/posts"
 
   constructor(private http: HttpClient) { }
 
   //we need a way to get all posts (READ)
-  getAllPost(): Observable<Post[]> {
-    return this.http.get<Post[]>(this.myPostURL)
+  getAllPost(): Observable<any> {
+    return this.http.get<any>(this.myPostURL)
   }
 
   //This will get one of the posts the user has created (gotten by id)
@@ -37,8 +37,14 @@ export class PostService {
 
   //We need a way to create a new post (CREATE)
   //Component needs to provide the new post information.
-  createPost(newPost: Post): Observable<Post> {
-    return this.http.post<Post>(this.myPostURL,newPost)
+  
+  createPost(newPost: Post): Observable<any>{
+    let myHeaders = {
+      Authorization: localStorage.getItem("myAppToken")
+    }
+    return this.http.post<any>(this.myPostURL+"/createPost", newPost, {headers: {
+      Authorization: localStorage.getItem("myAppToken")
+    }});
   }
 
 

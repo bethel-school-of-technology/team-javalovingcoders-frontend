@@ -9,7 +9,8 @@ import { HeaderComponent } from './header/header.component';
 import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
-    { path: '', component: PostComponent },
+    { path: '', redirectTo: '/login', pathMatch: 'full' }, 
+    //redirects to login path
     { path: "header", component: HeaderComponent },
    //local host:4200/login
     { path: "login", component: LoginComponent },
