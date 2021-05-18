@@ -6,4 +6,18 @@ import { Component } from "@angular/core";
   styleUrls: ['./header.component.css']
 
 })
-export class HeaderComponent {}
+export class HeaderComponent {
+router: any;
+
+getToken(){
+  return localStorage.getItem("myAppToken")
+}
+
+logout(){
+  localStorage.clear();
+
+}
+myRedirect(){
+  location.replace("/login")
+}
+}
