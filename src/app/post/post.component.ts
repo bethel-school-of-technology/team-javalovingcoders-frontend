@@ -9,8 +9,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./post.component.css']
 })
 export class PostComponent implements OnInit {
-  enteredTitle='';
-  enteredContent='';
+  enteredTitle = '';
+  enteredContent = '';
   @Output() postCreated = new EventEmitter();
 
 
@@ -27,12 +27,12 @@ export class PostComponent implements OnInit {
     this.postCreated.emit(post);
   }
   constructor() { }
-  //private myPostService: PostService, private router: Router (Goes in the constructor above)
+
 
   ngOnInit(): void {
   }
 
-  refresh():void {
+  refresh(): void {
     window.location.reload();
   }
 

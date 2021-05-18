@@ -12,6 +12,7 @@ import { PostService } from '../services/post.service';
 export class ProfileComponent implements OnInit {
   storedPosts: any = [];
 
+
 onPostAdded(post:any){
   this.storedPosts.push(post);
   this.myPostService.createPost(post).subscribe(myResponse => {
@@ -25,10 +26,18 @@ onPostAdded(post:any){
 
 
     ngOnInit(): void {
+      if(!localStorage.getItem("myAppToken")){
+        window.alert("You are Not Logged In");
+        this.myRouter.navigate(["/login"])
 
+      }
+      // this.myUserService.getUserProfile().subscribe(myResponseObject => {
+      //   console.log(myResponseObject);
+      //   this.currentUser = myResponseObject.user;
+      }
     }
 
 
-  }
+
 
 
