@@ -2,13 +2,13 @@
     <!--multi allows multiple posts to be opened.-->
 
     
-    <mat-expansion-panel *ngFor="let post of posts">
+    <mat-expansion-panel *ngFor="let post of listOfPosts">
         <!--This loop is looping through 'posts' and storing it in the 'post' -->
         <!-- (its important to note that 'posts' is a function and is called on in the ts file )-->
         <mat-expansion-panel-header>
-            {{ post.title }}
+            {{ post.PostTitle }}
         </mat-expansion-panel-header>
-        <p>{{post.content}}</p>
+        <p>{{post.PostBody}}</p>
     </mat-expansion-panel>
 </mat-accordion>
 <p class="info-text mat-body-strong" *ngIf="!postsLength()">No posts added yet!</p>

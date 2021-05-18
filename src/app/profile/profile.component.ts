@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from '../services/user.service.spec';
+import { PostService } from '../services/post.service';
 
 
 @Component({
@@ -13,9 +14,14 @@ export class ProfileComponent implements OnInit {
 
 onPostAdded(post:any){
   this.storedPosts.push(post);
+  this.myPostService.createPost(post).subscribe(myResponse => {
+    console.log(myResponse)
+  })
+
   console.log(post);
 }
-  constructor(private myUserService: UserService, private myRouter: Router) { }
+  constructor(private myUserService: UserService, private myPostService: PostService,
+     private myRouter: Router) { }
 
 
     ngOnInit(): void {

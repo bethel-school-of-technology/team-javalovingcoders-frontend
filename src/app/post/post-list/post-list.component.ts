@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Post } from 'src/app/models/post';
+import { PostService } from '../../services/post.service';
 
 @Component({
   selector: 'app-post-list',
@@ -6,22 +8,28 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./post-list.component.css']
 })
 export class PostListComponent implements OnInit {
-  // posts= [
-  //   {title: '1 this Post', content: 'this is the first post\'s contact'},
-  //   {title: '2 this Post', content: 'this is the first post\'s contact'},
-  //   {title: '3 this Post', content: 'this is the first post\'s contact'}
-
-  // ];
+  // Property to store all of the posts
+   listOfPosts: Post[] = [];
 
   @Input() posts:any= [];
 
-  constructor() { }
+  containsPost: boolean = false;
+
+  constructor( private myPostService: PostService ) { }
+
+  // Below goes inside the constructor 
+  
 
   ngOnInit(): void {
+    this.myPostService.getAllPost().subscribe(response => {
+      console.log(response);
+      this.listOfPosts = response.message;
+ 
+    })
   }
 
   postsLength() {
-    if (this.posts.length > 0) {
+    if (this.listOfPosts.length > 0) {
       return true;
     } else  {
       return false;
