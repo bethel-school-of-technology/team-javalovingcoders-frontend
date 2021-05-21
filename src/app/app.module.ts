@@ -3,6 +3,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ImageCropperModule } from 'ngx-image-cropper';
 
 
 import { MatInputModule } from '@angular/material/input';
@@ -24,6 +25,7 @@ import { ProfileComponent } from './profile/profile.component'
 import { HeaderComponent } from './header/header.component';
 import { PostListComponent } from './post/post-list/post-list.component'
 import { UserService } from './services/user.service.spec';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 @NgModule({
@@ -52,6 +54,8 @@ import { UserService } from './services/user.service.spec';
     MatToolbarModule,
     MatPaginatorModule,
     MatExpansionModule,
+    FlexLayoutModule,
+    ImageCropperModule,
     UserService
   ],
   providers: [UserService],

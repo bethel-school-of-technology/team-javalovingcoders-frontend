@@ -1,8 +1,7 @@
 main {
   margin-top: 1rem;
-  width:25%;
-  margin:1rem;
-
+  width: 25%;
+  margin: 1rem;
 }
 
 mat-form-field,
@@ -10,5 +9,10 @@ textarea {
   margin: auto;
 }
 
+mat-card {
+  border-radius: 10px;
+}
 
-
+input[type="file"]{
+  visibility: hidden;
+}
