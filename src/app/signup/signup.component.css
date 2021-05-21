@@ -1,14 +1,29 @@
-mat-card{
-  width: 25%;
+mat-card form{
+  width: 50%;
   margin: auto;
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
 }
 
-mat-form-field
-textarea{
+mat-form-field textarea {
   width: 100%;
 }
 
-#logo{
+#logo {
+  width:100%;
+  height: auto;
   text-align: center;
-
+}
+mat-card {
+  width: 25%;
+  margin: auto;
+  flex: 50%;
+  border-radius: 10%;
+}
+@media screen and (max-width: 960px){
+  mat-card{
+  width: 50%;
+  }
 }

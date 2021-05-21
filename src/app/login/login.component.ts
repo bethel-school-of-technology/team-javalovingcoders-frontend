@@ -25,8 +25,9 @@ export class LoginComponent {
         window.alert(myResponseObject.message);
         localStorage.setItem('myAppToken', myResponseObject.token);
         this.myRouter.navigate(["/profile"]);
-      } else
+      } else {
         window.alert(myResponseObject.message);
+      }
     })
   }
   newUser(newUser: any) {
