@@ -1,7 +1,7 @@
 <mat-accordion multi="true" *ngIf="postsLength()">
     <!--multi allows multiple posts to be opened.-->
 
-    
+
     <mat-expansion-panel *ngFor="let post of listOfPosts">
         <!--This loop is looping through 'posts' and storing it in the 'post' -->
         <!-- (its important to note that 'posts' is a function and is called on in the ts file )-->
@@ -9,6 +9,7 @@
             {{ post.PostTitle }}
         </mat-expansion-panel-header>
         <p>{{post.PostBody}}</p>
+
         <a [routerLink] = "['/edit/', post.PostId]">Submit
         </a>
         <button (click) = "deletePost(post.PostId)">Delete</button>

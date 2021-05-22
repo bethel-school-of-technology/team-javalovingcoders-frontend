@@ -33,13 +33,15 @@ export class PostService {
   }
 
   //we need a way to delete the posts (DELETE)
-  deletePost(deleteID: number):Observable<any> {
-    return this.http.delete<any>(`${this.myPostURL}/${deleteID}`)
+  deletePost(PostId): Observable<any> {
+    return this.http.post<any>(`${this.myPostURL}/delete`, {PostId},{headers: {
+      Authorization: localStorage.getItem("myAppToken")
+    }});
   }
 
   //We need a way to create a new post (CREATE)
   //Component needs to provide the new post information.
-  
+
   createPost(newPost: Post): Observable<any>{
     let myHeaders = {
       Authorization: localStorage.getItem("myAppToken")

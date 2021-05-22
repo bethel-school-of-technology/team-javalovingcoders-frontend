@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Post } from 'src/app/models/post';
 import { PostService } from '../../services/post.service';
 
@@ -14,8 +15,11 @@ export class PostListComponent implements OnInit {
   @Input() posts: any = [];
 
   containsPost: boolean = false;
+  PostId: any;
+  //router: any;
+  currentPost: any;
 
-  constructor(private myPostService: PostService) { }
+  constructor(private myPostService: PostService, private router:Router) { }
 
 
   ngOnInit(): void {
@@ -23,7 +27,7 @@ export class PostListComponent implements OnInit {
       console.log(response);
       this.listOfPosts = response.message;
 
-    })
+    });
   }
 
   postsLength() {
@@ -31,14 +35,18 @@ export class PostListComponent implements OnInit {
       return true;
     } else {
       return false;
-    }
+    };
   }
-
-  deletePost(PostId:number){
-    console.log("testing",PostId);
-    this.myPostService.deletePost(PostId).subscribe(response =>{
-      this.ngOnInit();
-    })
+  deletePost(id): void {
+    this.myPostService.deletePost(id)
+    .subscribe(
+      response => {
+    console.log(response);
+    this.ngOnInit();
+    this.router.navigate(['profile']);
+      },
+    error => {
+      console.log(error);
+    });
   }
-
 }
