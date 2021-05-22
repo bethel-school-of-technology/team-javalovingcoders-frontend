@@ -10,9 +10,9 @@
         </mat-expansion-panel-header>
         <p>{{post.PostBody}}</p>
 
-        <a [routerLink] = "['/edit/', post.PostId]">Submit
+        <a [routerLink] = "['/edit/', post.PostId]"><button class="margin">Edit</button>
         </a>
-        <button (click) = "deletePost(post.PostId)">Delete</button>
+        <button (click) = "deletePost(post.PostId)" class="marginn" >Delete</button>
     </mat-expansion-panel>
 </mat-accordion>
 
