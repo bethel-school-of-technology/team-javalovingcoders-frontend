@@ -26,7 +26,9 @@ export class PostService {
 
   //We need a way to update the post information (UPDATE)
   updatePost(editID: number, edditedInfo: Post): Observable<Post> {
-    return this.http.put<Post>(`${this.myPostURL}/${editID}`,edditedInfo)
+    return this.http.put<Post>(`${this.myPostURL}/update`,edditedInfo, {headers: {
+      Authorization: localStorage.getItem("myAppToken")
+    }})
 
   }
 
@@ -48,6 +50,13 @@ export class PostService {
       Authorization: localStorage.getItem("myAppToken")
     }});
   }
+
+  // deletePost(postId: string) {
+  //   this.http.delete("http://localhost:3001/posts/" + postId)
+  //   .subscribe(() => {
+  //     console.log('Deleted!');
+  //   })
+  // }
 
 
 }

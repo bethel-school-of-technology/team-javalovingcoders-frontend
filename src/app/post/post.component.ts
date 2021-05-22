@@ -2,7 +2,6 @@ import { Component, EventEmitter, Output, OnInit } from '@angular/core';
 import { Post } from '../models/post';
 import { PostService } from '../services/post.service';
 import { Router } from '@angular/router';
-import { ImageCroppedEvent } from 'ngx-image-cropper';
 
 @Component({
   selector: 'app-post',

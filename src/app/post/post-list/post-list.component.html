@@ -9,12 +9,17 @@
             {{ post.PostTitle }}
         </mat-expansion-panel-header>
         <p>{{post.PostBody}}</p>
-        <a [routerLink] = "['/postlist/', post.PostId]">Edit
+
+        <a [routerLink] = "['/edit/', post.PostId]">Submit
         </a>
-        <button (click)="deletePost(post.PostId)">Delete</button>
+        <button (click) = "deletePost(post.PostId)">Delete</button>
     </mat-expansion-panel>
 </mat-accordion>
+
+
+
 <p class="info-text mat-body-strong" *ngIf="!postsLength()">No posts added yet!</p>
+
 
 <!--Title / Content are both created in post-list.component.ts-->
 
