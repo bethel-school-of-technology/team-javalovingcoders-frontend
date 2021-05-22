@@ -24,6 +24,8 @@ import { ProfileComponent } from './profile/profile.component'
 import { HeaderComponent } from './header/header.component';
 import { PostListComponent } from './post/post-list/post-list.component'
 import { UserService } from './services/user.service.spec';
+import { EditComponent } from './edit/edit.component';
+import { ViewallpostComponent } from './viewallpost/viewallpost.component';
 
 
 @NgModule({
@@ -34,7 +36,9 @@ import { UserService } from './services/user.service.spec';
     PostComponent,
     ProfileComponent,
     HeaderComponent,
-    PostListComponent
+    PostListComponent,
+    EditComponent,
+    ViewallpostComponent
   ],
   imports: [
     BrowserModule,

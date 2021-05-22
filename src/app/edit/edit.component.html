@@ -1,0 +1,15 @@
+<h1>Test</h1>
+<main>
+    <mat-card>
+      <mat-form-field>
+        <input matInput type="text" placeholder="Recipe Type & Origin" [(ngModel)]="editPost.PostTitle">
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <textarea matInput rows="6" placeholder="Enter Recipe here!" [(ngModel)]="editPost.PostBody"></textarea>
+      </mat-form-field>
+      <button mat-raised-button color="accent" (click)="updatePost()">Update Post
+      </button>
+    </mat-card>
+  </main>
+  
