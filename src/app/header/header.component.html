@@ -14,6 +14,9 @@
       <a mat-button *ngIf="getToken()" routerLink="/profile" routerLinkActive="mat-accent">Profile</a>
     </li>
     <li>
+      <a mat-button *ngIf="getToken()" routerLink="/posts" routerLinkActive="mat-accent">Community Recipes</a>
+    </li>
+    <li>
       <a mat-button *ngIf="getToken()" (click)="logout()" (click)="myRedirect()" routerLinkActive="mat-accent">Logout</a>
     </li>
     </ul>

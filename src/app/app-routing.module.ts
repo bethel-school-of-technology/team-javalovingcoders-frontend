@@ -9,6 +9,7 @@ import { HeaderComponent } from './header/header.component';
 import { ProfileComponent } from './profile/profile.component';
 import { EditComponent } from './edit/edit.component';
 import { PostListComponent } from './post/post-list/post-list.component';
+import { ViewallpostComponent } from './viewallpost/viewallpost.component';
 
 const routes: Routes = [
     { path: '', redirectTo: '/login', pathMatch: 'full' }, 
@@ -23,7 +24,10 @@ const routes: Routes = [
     //local host:4200/profile
     { path: "profile", component: ProfileComponent  },
     //local host:4200/edit/1
-    { path: "edit/:PostId", component: EditComponent}
+    { path: "edit/:PostId", component: EditComponent},
+    //local host:4200/posts
+    { path: "posts", component: ViewallpostComponent}
+
 ];
 
 @NgModule({
