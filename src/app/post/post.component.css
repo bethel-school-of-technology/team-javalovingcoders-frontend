@@ -7,7 +7,14 @@ main {
 mat-form-field,
 textarea {
   margin: auto;
-}
+  }
+
+  button {
+      text-decoration: none;
+      text-transform: uppercase;
+      color:black;
+    }
+
 
 mat-card {
   border-radius: 10px;

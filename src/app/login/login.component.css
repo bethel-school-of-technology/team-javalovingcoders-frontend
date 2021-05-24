@@ -22,8 +22,14 @@ mat-card {
   flex: 50%;
   border-radius: 10%;
 }
+mat-card-actions button{
+  text-decoration: none;
+  text-transform: uppercase;
+  color: black;
+}
 @media screen and (max-width: 960px){
   mat-card{
   width: 50%;
   }
 }
+
